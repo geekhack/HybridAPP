@@ -1,0 +1,76 @@
+{
+    "prepare_queue": {
+        "installed": [],
+        "uninstalled": []
+    },
+    "config_munge": {
+        "files": {}
+    },
+    "installed_plugins": {
+        "cordova-plugin-battery-status": {
+            "PACKAGE_NAME": "Nazarene"
+        },
+        "cordova-plugin-camera": {
+            "PACKAGE_NAME": "Nazarene"
+        },
+        "cordova-plugin-console": {
+            "PACKAGE_NAME": "Nazarene"
+        },
+        "cordova-plugin-contacts": {
+            "PACKAGE_NAME": "Nazarene"
+        },
+        "cordova-plugin-device": {
+            "PACKAGE_NAME": "Nazarene"
+        },
+        "cordova-plugin-device-motion": {
+            "PACKAGE_NAME": "Nazarene"
+        },
+        "cordova-plugin-device-orientation": {
+            "PACKAGE_NAME": "Nazarene"
+        },
+        "cordova-plugin-dialogs": {
+            "PACKAGE_NAME": "Nazarene"
+        },
+        "cordova-plugin-file-transfer": {
+            "PACKAGE_NAME": "Nazarene"
+        },
+        "cordova-plugin-geolocation": {
+            "PACKAGE_NAME": "Nazarene"
+        },
+        "cordova-plugin-globalization": {
+            "PACKAGE_NAME": "Nazarene"
+        },
+        "cordova-plugin-inappbrowser": {
+            "PACKAGE_NAME": "Nazarene"
+        },
+        "cordova-plugin-media": {
+            "PACKAGE_NAME": "Nazarene"
+        },
+        "cordova-plugin-media-capture": {
+            "PACKAGE_NAME": "Nazarene"
+        },
+        "cordova-plugin-network-information": {
+            "PACKAGE_NAME": "Nazarene"
+        },
+        "cordova-plugin-splashscreen": {
+            "PACKAGE_NAME": "Nazarene"
+        },
+        "cordova-plugin-statusbar": {
+            "PACKAGE_NAME": "Nazarene"
+        },
+        "cordova-plugin-vibration": {
+            "PACKAGE_NAME": "Nazarene"
+        },
+        "cordova-plugin-whitelist": {
+            "PACKAGE_NAME": "Nazarene"
+        }
+    },
+    "dependent_plugins": {
+        "cordova-plugin-compat": {
+            "PACKAGE_NAME": "Nazarene"
+        },
+        "cordova-plugin-file": {
+            "PACKAGE_NAME": "Nazarene"
+        }
+    }
+}
