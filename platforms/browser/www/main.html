@@ -11,67 +11,100 @@
  
   <link rel="stylesheet" type="text/css" href="css/index.css" />
   <script type="text/javascript" src="js/angular.min.js"></script>
-  <script src="onsenui/js/onsenui.min.js"></script>
-  
   <link rel="stylesheet" href="onsenui/css/onsenui.css">
   <link rel="stylesheet" href="onsenui/css/onsen-css-components.css">
   <link rel="stylesheet" href="css/login.css">
+  <script type="text/javascript" src="js/app.js"></script>
   <script src="onsenui/js/onsenui.js"></script>
   <script src="onsenui/js/angular-onsenui.js"></script>
-  <script type="text/javascript" src="js/app.js"></script>
-  <script type="text/javascript" src="cordova.js"></script>
+  
   
 
   <title>Login</title>
 
-</head>
-
-<body ng-controller="myCtrl">
-      <ons-splitter>
-  <ons-splitter-side id="menu" side="left" width="220px" collapse swipeable>
+  <ons-page>
+  <ons-splitter var="mySplitter" ng-controller="SplitterController as splitter">
+  <ons-splitter-side id="menu" side="left" width="180px" collapse swipeable>
     <ons-page>
+
+    <ons-list>
+    <ons-list-item tappable style="height: 170px;background-image:url(anulogo.png); background-size: 180px 170px;
+    background-repeat: no-repeat; margin-right: 0px ">          
+    </ons-list-item>
+    </ons-list>
+
+    <ons-list>
+    <ons-list-item style="font-size: 14px" ng-controller="coursesCtrl">
+     <b>Welcome</b>&nbsp; <font color="brown">{{loggedinuser}}</font>
+    </ons-list-item>
+    </ons-list>
+
       <ons-list>
-        <ons-list-item onclick="fn.redirect('home.html')" tappable>
-          Home
+        <ons-list-item style="font-size: 14px" ng-click="courses()" tappable>
+          <ons-icon  icon="fa-user"  size="20px" fixed-width="false"  style="color:gold">
+          </ons-icon>My Account
         </ons-list-item>
-        <ons-list-item onclick="fn.redirect('settings.html')" tappable>
-          Settings
+        <ons-list-item style="font-size: 14px" ng-click="splitter.load('settings.html')" tappable>
+          <ons-icon  icon="fa-bar-chart"  size="20px" fixed-width="false"  style="color:gold">
+          </ons-icon>Student Portal
         </ons-list-item>
-        <ons-list-item onclick="fn.redirect('about.html')" tappable>
-          About
+        <ons-list-item style="font-size: 14px" ng-click="splitter.load('about.html')" tappable>
+         <ons-icon  icon="fa-soccer-ball-o"  size="20px" fixed-width="false"  style="color:gold">
+          </ons-icon> Athletics
         </ons-list-item>
-        <ons-list-item tappable>
-          Logout(<font color="brown">{{user.useer}}</font>)
+        <ons-list-item style="font-size: 14px" ng-click="splitter.load('about.html')" tappable>
+          <ons-icon  icon="fa-calendar"  size="20px" fixed-width="false"  style="color:gold">
+          </ons-icon>Calendar
+        </ons-list-item>
+        <ons-list-item style="font-size: 14px" ng-click="splitter.load('about.html')" tappable>
+          <ons-icon  icon="fa-bell"  size="20px" fixed-width="false"  style="color:gold">
+          </ons-icon>Alerts
+        </ons-list-item>
+        <ons-list-item  style="font-size: 14px" ng-click="logoutUser()" tappable ng-controller="coursesCtrl">
+          <ons-icon  icon="fa-power-off"  size="20px" fixed-width="false"  style="color:red">
+          </ons-icon>Logout
         </ons-list-item>
       </ons-list>
+
     </ons-page>
   </ons-splitter-side>
-  <ons-splitter-content id="content" page="home.html"></ons-splitter-content>
+  <ons-splitter-content page="main.html"></ons-splitter-content>
 </ons-splitter>
-
-<ons-template id="home.html">
+</ons-page>
+</head>
+<body ng-controller="coursesCtrl">
+<ons-template id="main.html">
   <ons-page>
-      <ons-toolbar class="toolbar toolbar--material" style="background-color:#ff0000">
+    <ons-toolbar style="background-color:gold">
       <div class="left">
-        <ons-toolbar-button onclick="fn.open()">
+        <ons-toolbar-button ng-click="mySplitter.left.open()">
           <ons-icon icon="md-menu"></ons-icon>
         </ons-toolbar-button>
       </div>
       <div class="center">
-        Main
+        My Courses
       </div>
     </ons-toolbar>
-    <p style="text-align: center; opacity: 0.6; padding-top: 20px;">
-      Swipe right to open the menu!
-    </p>
+    <ons-page>
+       <div>
+		    <ons-list ng-repeat="x in mycourses">
+		    
+		     <ons-list-item>
+		          <ons-col>{{x.CourseName}}</ons-col>
+		          <ons-col>{{x.RegistrationStatus}}</ons-col>
+		     </ons-list-item>
+            	  
+		    </ons-list>
+	   </div>
+    </ons-page>
   </ons-page>
 </ons-template>
 
 <ons-template id="settings.html">
   <ons-page>
-      <ons-toolbar class="toolbar toolbar--material" style="background-color:#ff0000">
+    <ons-toolbar style="background-color: #ff0000">
       <div class="left">
-        <ons-toolbar-button onclick="fn.open()">
+        <ons-toolbar-button ng-click="mySplitter.left.open()">
           <ons-icon icon="md-menu"></ons-icon>
         </ons-toolbar-button>
       </div>
@@ -84,9 +117,9 @@
 
 <ons-template id="about.html">
   <ons-page>
-      <ons-toolbar class="toolbar toolbar--material" style="background-color:#ff0000">
+    <ons-toolbar>
       <div class="left">
-        <ons-toolbar-button onclick="fn.open()">
+        <ons-toolbar-button ng-click="mySplitter.left.open()">
           <ons-icon icon="md-menu"></ons-icon>
         </ons-toolbar-button>
       </div>
@@ -96,25 +129,26 @@
     </ons-toolbar>
   </ons-page>
 </ons-template>
+</ons-page>
+   
 <script type="text/javascript">
-  window.fn = {};
+  /*var k=ons.bootstrap();
 
-window.fn.open = function() {
-  var menu = document.getElementById('menu');
-  menu.open();
-};
+  k.controller('SplitterController', function() {
+    this.load = function(page) {
+      mySplitter.content.load(page)
+        .then(function() {
+          mySplitter.left.close();
+        });
+    };
+  });
+  k.controller('coursesCtrl',function($scope)
+  {
+    $
+  });*/
 
-window.fn.load = function(page) {
-  var content = document.getElementById('content');
-  var menu = document.getElementById('menu');
-  content.load(page)
-    .then(menu.close.bind(menu));
-};
-window.fn.redirect=function(newpage)
-{
-  window.location=newpage;
-};
 </script>
+
 </body>
 
 </html>

@@ -29,13 +29,13 @@
 <body ng-controller="myCtrl">
       <ons-page >
       <ons-toolbar class="toolbar toolbar--material" style="background-color:#ff0000">
-        <div class="center">Log In</div>
+        <div class="center" style="background-color: #ff0000;padding-left: 30%;padding-right: 30%;">Log In</div>
       </ons-toolbar>
 
       <div class="login-form">
 
-        <ons-input class="text-input--underbar" name="username" ng-model="user.username" placeholder="Username" value=""></ons-input>
-        <ons-input class="text-input--underbar" placeholder="Password" ng-model="user.password" value=""></ons-input>
+        <input class="text-input--underbar" name="username" ng-model="user.username" placeholder="studentnumber@anu.ac.ke" value="" />
+        <input class="text-input--underbar" placeholder="password" ng-model="user.password" value=""/>
         <br><br>
         <ons-button modifier="large" class="login-button" id="btnlogin" ng-click="clickHandler()">Log In</ons-button>
         <br><br>

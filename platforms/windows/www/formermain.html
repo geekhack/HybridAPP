@@ -1,0 +1,120 @@
+﻿<!DOCTYPE html>
+<html ng-app="myApp">
+
+<head>
+    <meta charset="utf-8" />
+    <meta name="format-detection" content="telephone=no" />
+    <meta name="msapplication-tap-highlight" content="no" />
+    <meta name="viewport" content="user-scalable=no, initial-scale=1, maximum-scale=1, minimum-scale=1, width=device-width" />
+    <!-- This is a wide open CSP declaration. To lock this down for production, see below. -->
+    <meta http-equiv="Content-Security-Policy" content="default-src * 'unsafe-inline'; style-src 'self' 'unsafe-inline'; media-src *" />
+ 
+  <link rel="stylesheet" type="text/css" href="css/index.css" />
+  <script type="text/javascript" src="js/angular.min.js"></script>
+  <script src="onsenui/js/onsenui.min.js"></script>
+  
+  <link rel="stylesheet" href="onsenui/css/onsenui.css">
+  <link rel="stylesheet" href="onsenui/css/onsen-css-components.css">
+  <link rel="stylesheet" href="css/login.css">
+  <script src="onsenui/js/onsenui.js"></script>
+  <script src="onsenui/js/angular-onsenui.js"></script>
+  <script type="text/javascript" src="js/app.js"></script>
+  <script type="text/javascript" src="cordova.js"></script>
+  
+
+  <title>Login</title>
+
+</head>
+
+<body   ng-controller="coursesCtrl">
+  <ons-page>
+  <ons-splitter var="mySplitter" ng-controller="SplitterController as splitter">
+  <ons-splitter-side id="menu" side="left" width="180px" collapse swipeable>
+    <ons-page>
+
+    <ons-list>
+    <ons-list-item tappable style="height: 170px;background-image:url(anulogo.png); background-size: 180px 170px;
+    background-repeat: no-repeat; margin-right: 0px ">          
+    </ons-list-item>
+    </ons-list>
+
+    <ons-list>
+    <ons-list-item style="font-size: 14px">
+     <b>Welcome</b>&nbsp; <font color="brown">{{loggedinuser}}</font>
+    </ons-list-item>
+    </ons-list>
+
+      <ons-list>
+        <ons-list-item style="font-size: 14px" ng-click="courses()" tappable>
+          <ons-icon  icon="fa-user"  size="20px" fixed-width="false"  style="color:gold">
+          </ons-icon>My Account
+        </ons-list-item>
+        <ons-list-item style="font-size: 14px" ng-click="splitter.load('settings.html')" tappable>
+          <ons-icon  icon="fa-bar-chart"  size="20px" fixed-width="false"  style="color:gold">
+          </ons-icon>Student Portal
+        </ons-list-item>
+        <ons-list-item style="font-size: 14px" ng-click="splitter.load('about.html')" tappable>
+         <ons-icon  icon="fa-soccer-ball-o"  size="20px" fixed-width="false"  style="color:gold">
+          </ons-icon> Athletics
+        </ons-list-item>
+        <ons-list-item style="font-size: 14px" ng-click="splitter.load('about.html')" tappable>
+          <ons-icon  icon="fa-calendar"  size="20px" fixed-width="false"  style="color:gold">
+          </ons-icon>Calendar
+        </ons-list-item>
+        <ons-list-item style="font-size: 14px" ng-click="splitter.load('about.html')" tappable>
+          <ons-icon  icon="fa-bell"  size="20px" fixed-width="false"  style="color:gold">
+          </ons-icon>Alerts
+        </ons-list-item>
+        <ons-list-item  style="font-size: 14px" tappable>
+          <ons-icon  icon="fa-power-off"  size="20px" fixed-width="false"  style="color:red">
+          </ons-icon>Logout
+        </ons-list-item>
+      </ons-list>
+
+    </ons-page>
+  </ons-splitter-side>  
+  <ons-splitter-content id="content" page="main.html"   ng-controller="coursesCtrl"></ons-splitter-content>
+</ons-splitter>
+
+<ons-template id="main.html" ng-controller="coursesCtrl">
+      <ons-page>
+          <ons-toolbar class="toolbar toolbar--material" style="background-color:gold">
+          <div class="left">
+            <ons-toolbar-button ng-click="mySplitter.left.open()">
+              <ons-icon icon="md-menu"></ons-icon>
+            </ons-toolbar-button>
+          </div>
+          <div class="center" style="font-size: 13px;font-weight: bold;">
+            Africa Nazarene University
+          </div>
+        </ons-toolbar>
+       
+      </ons-page>
+</ons-template>
+</ons-page>
+   
+<script type="text/javascript">
+/*  window.fn = {};
+
+window.fn.open = function() {
+  var menu = document.getElementById('menu');
+  menu.open();
+};
+
+window.fn.load = function(page) {
+  var content = document.getElementById('content');
+  var menu = document.getElementById('menu');
+  content.load(page)
+    .then(menu.close.bind(menu));
+};
+window.fn.redirect=function(newpage)
+{
+  window.location=newpage;
+};*/
+
+
+</script>
+
+</body>
+
+</html>

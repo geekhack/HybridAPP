@@ -1,7 +1,7 @@
 <?xml version='1.0' encoding='utf-8'?>
 <Package xmlns="http://schemas.microsoft.com/appx/2010/manifest" xmlns:m2="http://schemas.microsoft.com/appx/2013/manifest" xmlns:m3="http://schemas.microsoft.com/appx/2014/manifest" xmlns:mp="http://schemas.microsoft.com/appx/2014/phone/manifest">
     <Identity Name="com.phonegap.nazarene" Publisher="CN=$username$" Version="1.0.0.0" />
-    <mp:PhoneIdentity PhoneProductId="b1db9580-3eda-11e7-9091-d505b7d54077" PhonePublisherId="db093ed5-53b1-45f7-af72-751e8f36ab80" />
+    <mp:PhoneIdentity PhoneProductId="e280c790-42af-11e7-98ac-f9f309ff0401" PhonePublisherId="db093ed5-53b1-45f7-af72-751e8f36ab80" />
     <Properties>
         <DisplayName>Nazarene</DisplayName>
         <PublisherDisplayName>PhoneGap Team</PublisherDisplayName>
@@ -36,8 +36,8 @@
     <Capabilities>
         <Capability Name="internetClientServer" />
         <m3:Capability Name="contacts" />
-        <DeviceCapability Name="webcam" />
         <DeviceCapability Name="location" />
         <DeviceCapability Name="microphone" />
+        <DeviceCapability Name="webcam" />
     </Capabilities>
 </Package>
